@@ -1,0 +1,15 @@
+---
+- name: Challenge!
+  hosts: professors
+  gather_facts: no
+
+  vars_prompt:
+    - name: "ansible_ssh_pass"  # password to connect to farnsworth
+      prompt: "What is your ssh password?"
+      private: yes
+      encrypt: "sha512_crypt"
+      confirm: yes
+      salt_size: 7
+      default: "qwerty"
+
+ 
